@@ -76,7 +76,7 @@ public Action Command_VoiceHud(int client, int args) {
 * Formats and sends a voicehud to all clients that have voicehud enabled
 */
 public Action Timer_SendVoiceHud(Handle timer) {
-	int ids[MAXPLAYERS][32];
+	int ids[MAXPLAYERS][2];
 	
 	for (int i = 0; i < MAXPLAYERS; i++) {
 		int val = g_Voices[i];
@@ -86,7 +86,7 @@ public Action Timer_SendVoiceHud(Handle timer) {
 		ids[i][1] = val;
 	}
 	
-	SortCustom2D(ids, 32, SortByValue);
+	SortCustom2D(ids, 2, SortByValue);
 	
 	int index = 0;
 	int line = 0;
